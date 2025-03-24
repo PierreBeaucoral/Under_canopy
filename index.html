@@ -192,15 +192,12 @@
   <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
 </div>
 
-<!-- Fullscreen Modal with High-Definition SVG -->
+<!-- Fullscreen Modal with High-Definition PNG -->
 <div class="modal" id="flowchart-modal">
   <div class="modal-background" onclick="closeModal()"></div>
   <div class="modal-content" id="flowchart-modal-content">
     <figure class="image" style="margin: auto;">
-      <!-- Embedding the SVG using an object tag for better definition -->
-      <object data="static/images/graph.svg" type="image/svg+xml" style="width: 100%; height: auto;">
-        Your browser does not support SVG.
-      </object>
+      <img src="static/images/graph.png" alt="Flowchart Fullscreen" style="width: 100%; height: auto;">
     </figure>
   </div>
   <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
@@ -215,9 +212,18 @@
   }
 </script>
 
-<!-- Optional custom styles to ensure the flowchart is displayed at high definition -->
-<link rel="stylesheet" href="static/css/index.css">
+<!-- Custom CSS to ensure the PNG fills most of the screen -->
 <style>
+  #flowchart-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: auto;
+  }
+  #flowchart-modal-content img {
+    width: 100%;
+    height: auto;
+  }
+</style>
  /* Custom styles for high-definition SVG modal */
     #flowchart-modal-content {
       max-width: 95vw;
