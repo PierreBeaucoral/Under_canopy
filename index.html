@@ -180,12 +180,40 @@
             disbursed (allocation). The model incorporates geopolitical, institutional, and vulnerability indicators,
             allowing for a nuanced understanding of both adaptation and mitigation finance determinants.
           </p>
-          <!-- External SVG Flowchart -->
-          <div class="illustration">
-            <img src="static/images/graph.svg" alt="Flowchart of the classification process using ClimateFinanceBERT">
-            <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
-          </div>
-        </div>
+          <!-- Flowchart Section -->
+<div class="illustration">
+  <!-- Smaller Thumbnail Version -->
+  <img 
+    src="static/images/graph.svg" 
+    alt="Flowchart of the classification process using ClimateFinanceBERT" 
+    style="width: 300px; cursor: pointer;" 
+    onclick="openModal()"
+  >
+  <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
+</div>
+
+<!-- Full-Screen Modal -->
+<div class="modal" id="flowchart-modal">
+  <div class="modal-background" onclick="closeModal()"></div>
+  <div class="modal-content" style="max-width: 90vw; max-height: 90vh;">
+    <figure class="image">
+      <img src="static/images/graph.svg" alt="Flowchart Fullscreen">
+    </figure>
+  </div>
+  <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
+</div>
+
+<script>
+  // Open the modal
+  function openModal() {
+    document.getElementById('flowchart-modal').classList.add('is-active');
+  }
+
+  // Close the modal
+  function closeModal() {
+    document.getElementById('flowchart-modal').classList.remove('is-active');
+  }
+</script>
       </div>
     </section>
 
