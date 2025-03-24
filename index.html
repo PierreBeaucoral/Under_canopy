@@ -217,18 +217,17 @@
 
 <!-- Optional custom styles to ensure the flowchart is displayed at high definition -->
 <style>
-  /* Make the modal content as large as possible while fitting the screen */
-  #flowchart-modal-content {
-    max-width: 95vw;
-    max-height: 95vh;
-    margin: auto;
-  }
-
-  /* Let the SVG or image fill the container while preserving aspect ratio */
-  #flowchart-modal-content img {
-    width: 100%;
-    height: auto;
-  }
+ /* Custom styles for high-definition SVG modal */
+    #flowchart-modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+      margin: auto;
+    }
+    #flowchart-modal-content img,
+    #flowchart-modal-content object {
+      width: 100%;
+      height: auto;
+    }
 </style>
       </div>
     </section>
