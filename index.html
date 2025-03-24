@@ -192,28 +192,54 @@
   <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
 </div>
 
-<!-- Full-Screen Modal -->
+<!-- Thumbnail + Fullscreen Modal Flowchart Example -->
+<div class="illustration">
+  <!-- Smaller Thumbnail Version -->
+  <img 
+    src="static/images/graph.svg"
+    alt="Flowchart of the classification process using ClimateFinanceBERT" 
+    style="width: 300px; cursor: pointer;"
+    onclick="openModal()"
+  >
+  <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
+</div>
+
+<!-- Fullscreen Modal -->
 <div class="modal" id="flowchart-modal">
   <div class="modal-background" onclick="closeModal()"></div>
-  <div class="modal-content" style="max-width: 90vw; max-height: 90vh;">
-    <figure class="image">
-      <img src="static/images/graph.svg" alt="Flowchart Fullscreen">
+  <div class="modal-content" id="flowchart-modal-content">
+    <figure class="image" style="margin: auto;">
+      <!-- The same SVG file is used here; it will scale up for large screens -->
+      <img src="static/images/graph.svg" alt="Flowchart Fullscreen" />
     </figure>
   </div>
   <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
 </div>
 
 <script>
-  // Open the modal
   function openModal() {
     document.getElementById('flowchart-modal').classList.add('is-active');
   }
-
-  // Close the modal
   function closeModal() {
     document.getElementById('flowchart-modal').classList.remove('is-active');
   }
 </script>
+
+<!-- Optional custom styles to ensure the flowchart is displayed at high definition -->
+<style>
+  /* Make the modal content as large as possible while fitting the screen */
+  #flowchart-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: auto;
+  }
+
+  /* Let the SVG or image fill the container while preserving aspect ratio */
+  #flowchart-modal-content img {
+    width: 100%;
+    height: auto;
+  }
+</style>
       </div>
     </section>
 
