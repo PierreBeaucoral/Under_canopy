@@ -35,7 +35,7 @@
   <style>
     /* Custom styles for a fancier fixed navigation bar and page identity */
     .navbar.is-fixed-top {
-      background: linear-gradient(135deg, #2e3d55, #1f2a40);
+      background: linear-gradient(135deg, #66bb6a, #388e3c); /* Green gradient */
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       z-index: 1000;
     }
@@ -48,6 +48,10 @@
     }
     .navbar-brand .navbar-item img {
       max-height: 60px;
+    }
+    /* Add extra spacing between sections */
+    section {
+      margin-bottom: 3rem;
     }
     /* Add some top padding to account for the fixed navbar */
     body {
@@ -103,6 +107,10 @@
         <h1 class="title" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
           Under the Green Canopy
         </h1>
+        <!-- Add your name with hyperlink below the title -->
+        <p class="subtitle is-5" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+          By <a href="https://pierrebeaucoral.github.io/" target="_blank" style="color: #FFF;">Pierre Beaucoral</a>
+        </p>
         <h2 class="subtitle" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
           Advancing Climate Finance Analysis with AI
         </h2>
@@ -153,32 +161,32 @@
       </div>
     </section>
 
-<!-- Methods Section (excerpt) -->
-<section id="methods" class="hero is-light">
-  <div class="container">
-    <h2 class="title">Methods</h2>
-    <div class="content">
-      <h3>Data and Classification</h3>
-      <p>
-        Utilizing the OECD CRS dataset (1973–2022), the study examines over 5 million project descriptions.
-        A two-stage classification using ClimateFinanceBERT first filters climate-relevant projects and then categorizes
-        them into mitigation, adaptation, and environmental finance. This approach incorporates modern NLP techniques
-        and cluster analysis to overcome the biases inherent in self-reported data.
-      </p>
-      <h3>Econometric Framework</h3>
-      <p>
-        A double hurdle model is employed to separately analyze the decision to allocate aid (selection) and the amount
-        disbursed (allocation). The model incorporates geopolitical, institutional, and vulnerability indicators,
-        allowing for a nuanced understanding of both adaptation and mitigation finance determinants.
-      </p>
-      <!-- External SVG Flowchart -->
-      <div class="illustration">
-        <img src="static/images/graph.svg" alt="Flowchart of the classification process using ClimateFinanceBERT">
-        <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
+    <!-- Methods Section (excerpt) -->
+    <section id="methods" class="hero is-light">
+      <div class="container">
+        <h2 class="title">Methods</h2>
+        <div class="content">
+          <h3>Data and Classification</h3>
+          <p>
+            Utilizing the OECD CRS dataset (1973–2022), the study examines over 5 million project descriptions.
+            A two-stage classification using ClimateFinanceBERT first filters climate-relevant projects and then categorizes
+            them into mitigation, adaptation, and environmental finance. This approach incorporates modern NLP techniques
+            and cluster analysis to overcome the biases inherent in self-reported data.
+          </p>
+          <h3>Econometric Framework</h3>
+          <p>
+            A double hurdle model is employed to separately analyze the decision to allocate aid (selection) and the amount
+            disbursed (allocation). The model incorporates geopolitical, institutional, and vulnerability indicators,
+            allowing for a nuanced understanding of both adaptation and mitigation finance determinants.
+          </p>
+          <!-- External SVG Flowchart -->
+          <div class="illustration">
+            <img src="static/images/graph.svg" alt="Flowchart of the classification process using ClimateFinanceBERT">
+            <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Results Section -->
     <section id="results">
