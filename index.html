@@ -1,305 +1,310 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Development Climate Finance AI">
-  <meta property="og:title" content="AI development finance research"/>
-  <meta property="og:description" content="Climate finance is critical for addressing the multifaceted challenges of climate change, encompassing mitigation, adaptation, and environmental sustainability. This study aims to renew the analysis of a critical part of climate finance determinants' allocation across these dimensions and accurately estimate bilateral public climate finance flows using an advanced machine learning approach. ClimateFinanceBERT (Bidirectional Encoder Representations from Transformers) is employed to classify development finance projects, distinguishing those that contribute to climate mitigation, adaptation, and environmental objectives. By examining a comprehensive dataset of development finance projects (OECD CRS) and replicating a recent research on climate public aid determinants, this study identifies key factors influencing the allocation of climate finance. This work updates significant patterns in climate finance distribution. This research contributes to the growing field of climate finance by offering a robust analytical framework for assessing the determinants of climate finance and proposing a scalable solution for monitoring financial flows aimed at addressing climate change in its entirety. The insights gained have important implications for policymakers and stakeholders striving to understand and optimize the allocation of climate finance to support global sustainability and resilience goals."/>
-  <meta property="og:url" content="https://pierrebeaucoral.github.io/"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- Social Media Meta Tags -->
+  <meta name="description" content="An advanced machine learning approach to refine climate finance estimates.">
+  <meta property="og:title" content="Under the Green Canopy: Advancing Climate Finance Analysis with AI"/>
+  <meta property="og:description" content="This study employs ClimateFinanceBERT to re‐examine bilateral public climate finance flows, highlighting key determinants through robust econometric analysis."/>
+  <meta property="og:url" content="https://pierrebeaucoral.github.io/Under_canopy/"/>
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:title" content="Under the Green Canopy: Advancing Climate Finance Analysis with AI">
+  <meta name="twitter:description" content="A machine learning-based framework using ClimateFinanceBERT to improve climate finance estimates and inform policy decisions.">
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="AI, Development Finance, OECD, Climate Finance">
+  <meta name="keywords" content="AI, Climate Finance, OECD, ClimateFinanceBERT, Econometrics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>Under the Green Canopy: bringing up to date public climate finance determinants analysis with AI</title>
+  <title>Under the Green Canopy: Advancing Climate Finance Analysis with AI</title>
   <link rel="icon" type="image/x-icon" href="static/images/icon.png">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <style>
+    /* Additional custom styles for academic presentation */
+    nav.sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav.sticky-nav a {
+      margin: 0 1rem;
+    }
+    section {
+      padding: 3rem 1.5rem;
+    }
+    .illustration {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .illustration svg {
+      max-width: 80%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="sticky-nav level">
+    <div class="level-left">
+      <a class="level-item" href="#abstract">Abstract</a>
+      <a class="level-item" href="#introduction">Introduction</a>
+      <a class="level-item" href="#methods">Methods</a>
+      <a class="level-item" href="#results">Results</a>
+      <a class="level-item" href="#econometrics">Econometrics</a>
+      <a class="level-item" href="#policy">Policy Implications</a>
+      <a class="level-item" href="#bibtex">BibTeX</a>
+    </div>
+  </nav>
 
-
-  <section class="hero">
+  <!-- Header Section -->
+  <header class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Under the Green Canopy: bringing up to date public climate finance determinants analysis with AI</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://pierrebeaucoral.github.io/" target="_blank">Pierre Beaucoral</a><sup>*</sup>,</span>
-                  </span>
-                  </div>
+      <div class="container has-text-centered">
+        <h1 class="title">Under the Green Canopy: Advancing Climate Finance Analysis with AI</h1>
+        <div class="subtitle">
+          <span><a href="https://pierrebeaucoral.github.io/" target="_blank">Pierre Beaucoral</a><sup>*</sup></span><br>
+          <span>Université Clermont Auvergne, CNRS, IRD, CERDI | pierre.beaucoral@uca.fr</span>
+          <p><small><sup>*</sup>Indicates Equal Contribution</small></p>
+        </div>
+        <div class="buttons is-centered">
+          <a href="https://arxiv.org/pdf/<ARXIV_PAPER_ID>.pdf" target="_blank" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+          <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Supplementary</span>
+          </a>
+          <a href="https://github.com/PierreBeaucoral/UNDERCANOPY" target="_blank" class="button is-dark is-rounded">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Code</span>
+          </a>
+          <a href="https://arxiv.org/abs/<ARXIV_PAPER_ID>" target="_blank" class="button is-dark is-rounded">
+            <span class="icon"><i class="ai ai-arxiv"></i></span>
+            <span>arXiv</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">UCA CNRS IRD CERDI<br>pierre.beaucoral@uca.fr</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+  <main>
+    <!-- Abstract Section -->
+    <section id="abstract" class="hero is-light">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Climate finance is critical for addressing the multifaceted challenges of climate change.
+            This study employs ClimateFinanceBERT, a machine learning framework built on advanced NLP techniques,
+            to re‐examine bilateral public climate finance flows. By classifying project descriptions from the OECD CRS
+            dataset, our analysis refines estimates of both mitigation and adaptation finance, revealing that traditional
+            methods may overestimate flows. The resulting insights offer an improved analytical framework for policymakers,
+            emphasizing transparency and impact in climate finance allocation.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+    <!-- Introduction Section -->
+    <section id="introduction">
+      <div class="container">
+        <h2 class="title">Introduction</h2>
+        <div class="content">
+          <p>
+            The escalating threat of climate change demands robust financial strategies. Traditional classification methods,
+            such as the OECD’s Rio markers, have limitations that obscure the nuanced allocation of climate finance.
+            This work introduces an AI-driven approach that leverages ClimateFinanceBERT to provide a more detailed and accurate
+            estimation of bilateral public climate finance. By revisiting the determinants of climate finance allocation,
+            we challenge longstanding assumptions and propose a framework that better aligns with contemporary climate challenges.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+    <!-- Methods Section -->
+    <section id="methods" class="hero is-light">
+      <div class="container">
+        <h2 class="title">Methods</h2>
+        <div class="content">
+          <h3>Data and Classification</h3>
+          <p>
+            Utilizing the OECD CRS dataset (1973–2022), the study examines over 5 million project descriptions.
+            A two-stage classification using ClimateFinanceBERT first filters climate-relevant projects and then categorizes
+            them into mitigation, adaptation, and environmental finance. This approach incorporates modern NLP techniques
+            and cluster analysis to overcome the biases inherent in self-reported data.
+          </p>
+          <h3>Econometric Framework</h3>
+          <p>
+            A double hurdle model is employed to separately analyze the decision to allocate aid (selection) and the amount
+            disbursed (allocation). The model incorporates geopolitical, institutional, and vulnerability indicators,
+            allowing for a nuanced understanding of both adaptation and mitigation finance determinants.
+          </p>
+          <!-- Optional inline illustration (SVG) for method flowchart -->
+          <div class="illustration">
+            <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="50" width="150" height="50" fill="#b5d3e7" stroke="#333"/>
+              <text x="95" y="80" font-size="14" text-anchor="middle" fill="#333">Project Data</text>
+              <line x1="170" y1="75" x2="230" y2="75" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+              <rect x="230" y="50" width="150" height="50" fill="#d7e9c7" stroke="#333"/>
+              <text x="305" y="80" font-size="14" text-anchor="middle" fill="#333">ClimateFinanceBERT</text>
+              <line x1="380" y1="75" x2="440" y2="75" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+              <rect x="440" y="50" width="150" height="50" fill="#f7d794" stroke="#333"/>
+              <text x="515" y="80" font-size="14" text-anchor="middle" fill="#333">Classification</text>
+              <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+                </marker>
+              </defs>
+            </svg>
+            <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/PierreBeaucoral/UNDERCANOPY" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+    <!-- Results Section -->
+    <section id="results">
+      <div class="container">
+        <h2 class="title">Results</h2>
+        <div class="content">
+          <p>
+            The refined classification uncovers significant discrepancies between traditional CRS estimates and those produced
+            by ClimateFinanceBERT. Key findings include lower estimates of mitigation and adaptation flows, suggesting that traditional
+            methods may suffer from overreporting biases. The interactive visualizations below illustrate these differences,
+            highlighting country vulnerabilities and the reclassified disbursement patterns.
+          </p>
+        </div>
+        <!-- Graphical Carousel: First set of graphs -->
+        <section class="hero is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <img src="static/images/vulnerability_map.png" alt="Map highlighting country vulnerability to climate risks">
+                  <h2 class="subtitle has-text-centered">Country Vulnerability Map</h2>
+                </div>
+                <div class="item">
+                  <img src="static/images/stackplot_disbursement.png" alt="Stackplot showing disbursement reclassified by ClimateFinanceBERT">
+                  <h2 class="subtitle has-text-centered">Reclassified Disbursements</h2>
+                </div>
+                <div class="item">
+                  <img src="static/images/stacked_area_mitigation_disbursement.png" alt="Stacked area chart comparing mitigation flows">
+                  <h2 class="subtitle has-text-centered">Mitigation Finance Comparison</h2>
+                </div>
+                <div class="item">
+                  <img src="static/images/stacked_area_adaptation_disbursement.png" alt="Stacked area chart comparing adaptation flows">
+                  <h2 class="subtitle has-text-centered">Adaptation Finance Comparison</h2>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Econometric Analysis Section -->
+    <section id="econometrics" class="hero is-light">
+      <div class="container">
+        <h2 class="title">Econometric Analysis & Discussion</h2>
+        <div class="content">
+          <p>
+            Using a double hurdle model, our analysis distinguishes between the selection and allocation stages of climate finance.
+            For mitigation finance, a strong positive correlation suggests standardized decision-making, whereas adaptation finance
+            displays a more complex, need-driven pattern. Tables and figures (not fully displayed here) quantify these effects,
+            challenging traditional views on the role of historical ties and governance in climate aid distribution.
+          </p>
+          <!-- Graphical Carousel: Second set of graphs -->
+          <section class="hero is-small">
+            <div class="hero-body">
+              <div class="container">
+                <div id="econometrics-carousel" class="carousel results-carousel">
+                  <div class="item">
+                    <img src="static/images/climate_finance_forecast_sarima.png" alt="SARIMA forecast for bilateral climate finance trend">
+                    <h2 class="subtitle has-text-centered">Forecast Trend (SARIMA)</h2>
+                  </div>
+                  <div class="item">
+                    <img src="static/images/combined_comparison_by_donor.png" alt="Comparison of study’s estimation vs. traditional methods by donor">
+                    <h2 class="subtitle has-text-centered">Donor Comparison: Study vs. Traditional</h2>
+                  </div>
+                  <div class="item">
+                    <img src="static/images/ratio_comparison_by_donor.png" alt="Over declaration ratio by donor countries">
+                    <h2 class="subtitle has-text-centered">Over-Declaration Ratio by Donor</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policy Implications Section -->
+    <section id="policy">
+      <div class="container">
+        <h2 class="title">Policy Implications</h2>
+        <div class="content">
+          <p>
+            The findings of this study have profound implications for international climate finance. With evidence of overreporting
+            in traditional estimates, a shift toward transparency and impact-driven allocation is needed. Adaptation finance should be
+            more focused on recipient vulnerability and institutional capacity, while mitigation finance remains partly influenced by
+            historical ties. Tailored policy frameworks must recognize these differences to optimize financial flows and enhance
+            the effectiveness of climate aid.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX Section -->
+    <section id="bibtex" class="hero is-light">
+      <div class="container">
+        <h2 class="title">BibTeX</h2>
+        <div class="content">
+          <pre><code>
+@unpublished{beaucoral2025,
+  title={Under the Green Canopy: Bringing Up to Date Public Climate Finance Determinants Analysis with AI},
+  author={Beaucoral, Pierre},
+  year={2025},
+  note={Preliminary version. Supported by the Agence Nationale de la Recherche.},
+  url={https://arxiv.org/abs/<ARXIV_PAPER_ID>}
+}
+          </code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
+              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              Please credit the source if you reuse this code. Licensed under
+              the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-Climate finance is critical for addressing the multifaceted challenges of climate change, encompassing mitigation, adaptation, and environmental sustainability. This study aims to renew the analysis of a critical part of climate finance determinants' allocation across these dimensions and accurately estimate bilateral public climate finance flows using an advanced machine learning approach. ClimateFinanceBERT (Bidirectional Encoder Representations from Transformers) is employed to classify development finance projects, distinguishing those that contribute to climate mitigation, adaptation, and environmental objectives. By examining a comprehensive dataset of development finance projects (OECD CRS) and replicating a recent research on climate public aid determinants, this study identifies key factors influencing the allocation of climate finance. This work updates significant patterns in climate finance distribution. This research contributes to the growing field of climate finance by offering a robust analytical framework for assessing the determinants of climate finance and proposing a scalable solution for monitoring financial flows aimed at addressing climate change in its entirety. The insights gained have important implications for policymakers and stakeholders striving to understand and optimize the allocation of climate finance to support global sustainability and resilience goals        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-  <!-- Text Section -->
-<section class="section">
-  <div class="container">
-    <h1 class="title has-text-centered">🌍 Key Insights from the Data 📊</h1>
-    <p class="content has-text-justified">
-      🌱 <strong>Climate finance</strong> plays a crucial role in addressing climate change by supporting <strong>mitigation</strong> 🌡️, <strong>adaptation</strong> 🌊, and <strong>environmental sustainability</strong> 🌿 initiatives. This research employs <strong>ClimateFinanceBERT</strong> 🤖, an advanced machine learning model, to classify development finance projects and analyze the determinants of bilateral public climate finance allocation.
-      <br><br>
-      📄 By leveraging <strong>text-based classification</strong> of project descriptions from the <strong>OECD Creditor Reporting System (CRS)</strong>, this study refines existing estimates of climate finance flows, offering a more precise alternative to conventional classification methods like <strong>Rio markers</strong> 📌. The findings suggest that traditional methods <strong>overestimate climate finance</strong> 💰, potentially due to strategic misclassification (<em>"greenwashing"</em> 🟢 or <em>"aidwashing"</em> 🌍💸).
-      <br><br>
-      📈 A key econometric analysis using the <strong>double hurdle model</strong> 📉 reveals distinct allocation patterns for <strong>mitigation</strong> and <strong>adaptation finance</strong>. While <strong>mitigation finance</strong> follows standardized allocation processes driven by <strong>emission reduction targets</strong> ♻️, <strong>adaptation finance</strong> remains highly influenced by <strong>recipient vulnerability</strong> 🌍 and <strong>donor strategic interests</strong> 🎯. Interestingly, <strong>governance factors</strong> 🏛️ play a stronger role in adaptation projects, highlighting the importance of <strong>institutional capacity</strong> 📚 in climate finance distribution.
-    </p>
-  </div>
-</section>
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vulnerability_map.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Countries' vulnerability.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/stackplot_disbursement.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Disbursments reclassified by ClimateFinanceBERT.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/stacked_area_mitigation_disbursement.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Comparison for CRS and ClimateFinanceBERT in mitigation.
-       </h2>
-     </div>
-     <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/stacked_area_adaptation_disbursement.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Comparison for CRS and ClimateFinanceBERT in adapation.
-       </h2>
-     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-    <!-- Text Section -->
-<section class="section">
-  <div class="container">
-    <h2 class="title has-text-centered">Key Contributions</h2>
-    
-    <div class="content">
-      <ul>
-        <li>✅ <strong>More Accurate Climate Finance Estimates:</strong> AI-driven classification provides a <em>restrictive and transparent</em> assessment of climate aid flows.</li>
-        <li>✅ <strong>New Insights on Climate Finance Determinants:</strong> Historical ties and self-reported commitments (e.g., <abbr title="Nationally Determined Contributions">NDCs</abbr>) have <em>less influence</em> than previously thought.</li>
-        <li>✅ <strong>Policy Implications:</strong> A <em>data-driven approach</em> to monitoring and optimizing climate finance allocation is crucial for ensuring that funds genuinely support sustainability and resilience goals.</li>
-      </ul>
-    </div>
-    
-    <p class="has-text-centered">
-      This research contributes to the broader discussion on <strong>climate finance transparency and efficiency</strong>, providing policymakers with <em>scalable, AI-powered tools</em> for financial accountability and climate action tracking.
-    </p>
-  </div>
-</section>
-
-
-
-
-
-<!-- Youtube video -->
-
-<!-- End youtube video -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/climate_finance_forecast_sarima.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Climate objectives in light of these estimates.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/combined_comparison_by_donor.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Donors differences in over declaration. 
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/ratio_comparison_by_donor.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-        Over declaration ratio by donor countries.
-       </h2>
-     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
-        @unpublished{beaucoral2025,
-  title={Under the Green Canopy: bringing up to date public climate finance determinants analysis with AI},
-  author={Beaucoral, Pierre},
-  year={2025}
-} </code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+</body>
+</html>
