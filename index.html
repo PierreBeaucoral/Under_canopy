@@ -57,6 +57,17 @@
     body {
       padding-top: 70px;
     }
+    /* Styles for the full-screen centered PNG image */
+    .full-screen-image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .full-screen-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -101,7 +112,6 @@
   </nav>
 
   <!-- Header Section with Enhanced Identity -->
-  <!-- Replace 'banner.webp' with the actual file name if needed -->
   <header class="hero is-medium" style="background: url('static/images/banner.webp') center center no-repeat; background-size: cover;">
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -146,6 +156,7 @@
         </div>
       </div>
     </section>
+
     <!-- Introduction Section -->
     <section id="introduction">
       <div class="container">
@@ -180,62 +191,11 @@
             disbursed (allocation). The model incorporates geopolitical, institutional, and vulnerability indicators,
             allowing for a nuanced understanding of both adaptation and mitigation finance determinants.
           </p>
-<!-- Thumbnail + Fullscreen Modal Flowchart Example -->
-<div class="illustration">
-  <!-- Smaller Thumbnail Version -->
-  <img 
-    src="static/images/graph.svg"
-    alt="Flowchart of the classification process using ClimateFinanceBERT" 
-    style="width: 300px; cursor: pointer;"
-    onclick="openModal()"
-  >
-  <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
-</div>
-
-<!-- Fullscreen Modal with High-Definition PNG -->
-<div class="modal" id="flowchart-modal">
-  <div class="modal-background" onclick="closeModal()"></div>
-  <div class="modal-content" id="flowchart-modal-content">
-    <figure class="image" style="margin: auto;">
-      <img src="static/images/graph.png" alt="Flowchart Fullscreen" style="width: 100%; height: auto;">
-    </figure>
-  </div>
-  <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
-</div>
-
-<script>
-  function openModal() {
-    document.getElementById('flowchart-modal').classList.add('is-active');
-  }
-  function closeModal() {
-    document.getElementById('flowchart-modal').classList.remove('is-active');
-  }
-</script>
-
-<!-- Custom CSS to ensure the PNG fills most of the screen -->
-<style>
-  #flowchart-modal-content {
-    max-width: 95vw;
-    max-height: 95vh;
-    margin: auto;
-  }
-  #flowchart-modal-content img {
-    width: 100%;
-    height: auto;
-  }
-</style>
- /* Custom styles for high-definition SVG modal */
-    #flowchart-modal-content {
-      max-width: 95vw;
-      max-height: 95vh;
-      margin: auto;
-    }
-    #flowchart-modal-content img,
-    #flowchart-modal-content object {
-      width: 100%;
-      height: auto;
-    }
-</style>
+          <!-- Centered Full-Screen PNG Image (replacing the thumbnail/modal) -->
+          <div class="full-screen-image-container">
+            <img src="static/images/graph.png" alt="Full Format Flowchart">
+          </div>
+        </div>
       </div>
     </section>
 
