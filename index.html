@@ -180,18 +180,6 @@
             disbursed (allocation). The model incorporates geopolitical, institutional, and vulnerability indicators,
             allowing for a nuanced understanding of both adaptation and mitigation finance determinants.
           </p>
-          <!-- Flowchart Section -->
-<div class="illustration">
-  <!-- Smaller Thumbnail Version -->
-  <img 
-    src="static/images/graph.svg" 
-    alt="Flowchart of the classification process using ClimateFinanceBERT" 
-    style="width: 300px; cursor: pointer;" 
-    onclick="openModal()"
-  >
-  <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
-</div>
-
 <!-- Thumbnail + Fullscreen Modal Flowchart Example -->
 <div class="illustration">
   <!-- Smaller Thumbnail Version -->
@@ -204,13 +192,15 @@
   <p><em>Figure: Flowchart of the classification process using ClimateFinanceBERT.</em></p>
 </div>
 
-<!-- Fullscreen Modal -->
+<!-- Fullscreen Modal with High-Definition SVG -->
 <div class="modal" id="flowchart-modal">
   <div class="modal-background" onclick="closeModal()"></div>
   <div class="modal-content" id="flowchart-modal-content">
     <figure class="image" style="margin: auto;">
-      <!-- The same SVG file is used here; it will scale up for large screens -->
-      <img src="static/images/graph.svg" alt="Flowchart Fullscreen" />
+      <!-- Embedding the SVG using an object tag for better definition -->
+      <object data="static/images/graph.svg" type="image/svg+xml" style="width: 100%; height: auto;">
+        Your browser does not support SVG.
+      </object>
     </figure>
   </div>
   <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
